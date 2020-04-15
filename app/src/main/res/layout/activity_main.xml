@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:id="@+id/back_root"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:gravity="center"
@@ -19,12 +21,57 @@
         android:text=""
         android:textColor="@color/black"/>
 
+    <TextView
+        android:id="@+id/ui_xp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_margin="15dp"
+        android:layout_gravity="top|left"
+        android:gravity="left"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/ui_lvl"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_margin="15dp"
+        android:layout_gravity="top|right"
+        android:gravity="right"
+        android:text=""/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/shop"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardCornerRadius="32dp"
+        android:layout_gravity="center|top"
+        app:cardBackgroundColor="@color/shop"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="shop"
+            android:background="@color/invisible"
+            android:textColor="@color/white"
+            android:textSize="36sp"/>
+
+    </androidx.cardview.widget.CardView>
+
     <ImageView
-           android:id="@+id/coin"
-           android:layout_width="match_parent"
-           android:layout_height="250dp"
-           android:src="@drawable/coin"
-           android:layout_gravity="bottom"
-           android:background="@color/invisible"/>
+        android:id="@+id/coin"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/coin"
+        android:layout_gravity="bottom|center"
+        android:background="@color/invisible" />
 
 </FrameLayout>
