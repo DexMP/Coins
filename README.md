@@ -10,4 +10,4 @@
 
 # Developer: <a href="https://vk.com/dexmp">DexMP</a>
 
-## Download: <a href="https://www.upload.ee/download/11474882/9b07aca919d6171b74bc/DexMP.apk">Click</a>
+## Download: <a href="https://www.upload.ee/download/11495725/7150d09c6475171f34e6/Coin.apk">Click</a>
