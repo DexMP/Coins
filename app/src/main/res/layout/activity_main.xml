@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
     android:id="@+id/back_root"
     tools:context=".MainActivity">
 
@@ -25,7 +24,7 @@
         android:id="@+id/ui_xp"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_margin="15dp"
         android:layout_gravity="top|left"
@@ -36,7 +35,7 @@
         android:id="@+id/ui_lvl"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_margin="15dp"
         android:layout_gravity="top|right"
@@ -49,7 +48,7 @@
         android:layout_height="100dp"
         app:cardCornerRadius="32dp"
         android:layout_gravity="center|top"
-        app:cardBackgroundColor="@color/shop"
+        app:cardBackgroundColor="@color/shop2"
         android:layout_marginTop="125dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp">
@@ -60,10 +59,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="shop"
-            android:background="@color/invisible"
             android:textColor="@color/white"
             android:textSize="36sp"/>
-
     </androidx.cardview.widget.CardView>
 
     <ImageView

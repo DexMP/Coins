@@ -12,7 +12,6 @@
         android:roundIcon="@drawable/coin"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Shop"></activity>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -24,7 +23,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".Shop"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent());
+                startActivity(new Intent(MainActivity.this, Shop.class));
             }
         });
     }
@@ -115,5 +115,6 @@ public class MainActivity extends AppCompatActivity {
         ui_xp = (TextView) findViewById(R.id.ui_xp);
         ui_lvl = (TextView) findViewById(R.id.ui_lvl);
         back_root = (FrameLayout) findViewById(R.id.back_root);
+        shop = (CardView) findViewById(R.id.shop);
     }
 }

@@ -6,7 +6,6 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="invisible">#00FFFFFF</color>
-    <color name="shop">#E63F51B5</color>
+    <color name="shop2">#439A47</color>
     <color name="green">#4CAF50</color>
-    <color name="gray">#E69C9C9C</color>
 </resources>
