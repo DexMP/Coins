@@ -5,12 +5,18 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -25,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
     // UI
     public ImageView coin;
     public TextView balance;
-    public CardView shop;
+    public ImageView shop;
     public TextView ui_xp;
     public TextView ui_lvl;
     public FrameLayout back_root;
+    public ProgressBar progress_xp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +53,21 @@ public class MainActivity extends AppCompatActivity {
         // Output
         balance.setText(coins + " Р");
         ui_lvl.setText("Уровень: " + lvl);
-        ui_xp.setText("Опыт: " + xp);
+        progress_xp.setMax(Consts.X_XP * lvl);
+        progress_xp.setProgress(xp);
 
         coin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Animation text
+                // Animation balance
                 YoYo.with(Techniques.Tada)
-                        .duration(500)
+                        .duration(Consts.DEFAULT_ANIMATION)
                         .repeat(0)
                         .playOn(balance);
 
                 // Animation button
                 YoYo.with(Techniques.Pulse)
-                        .duration(500)
+                        .duration(Consts.DEFAULT_ANIMATION)
                         .repeat(0)
                         .playOn(coin);
 
@@ -68,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 xp++;
                 balance.setText(coins + " Р");
                 ui_lvl.setText("Уровень: " + lvl);
-                ui_xp.setText("Опыт: " + xp);
+                progress_xp.setMax(Consts.X_XP * lvl);
+                progress_xp.setProgress(xp);
 
                 // Save progress
                 SharedPreferences savedProgress = getSharedPreferences("Saver", MODE_PRIVATE);
@@ -78,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("lvl", lvl);
                 editor.apply();
 
-                if (xp > 1000 * lvl){
+                if (xp > Consts.X_XP * lvl){
                     // Edit vars
                     lvl++;
                     coins = coins * 2;
@@ -86,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
                     balance.setText(coins + " Р");
                     ui_lvl.setText("Уровень: " + lvl);
-                    ui_xp.setText("Опыт: " + xp);
+                    progress_xp.setMax(Consts.X_XP * lvl);
+                    progress_xp.setProgress(xp);
 
                     // Save progress
                     SharedPreferences sProgress = getSharedPreferences("Saver", MODE_PRIVATE);
@@ -99,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // Shop
         shop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,12 +118,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+     /*================================ Important Section! ================================*/
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     private void initData() {
         coin = (ImageView) findViewById(R.id.coin);
         balance = (TextView) findViewById(R.id.balance);
         ui_xp = (TextView) findViewById(R.id.ui_xp);
         ui_lvl = (TextView) findViewById(R.id.ui_lvl);
         back_root = (FrameLayout) findViewById(R.id.back_root);
-        shop = (CardView) findViewById(R.id.shop);
+        shop = (ImageView) findViewById(R.id.shop);
+        progress_xp = (ProgressBar) findViewById(R.id.progress_xp);
     }
 }
