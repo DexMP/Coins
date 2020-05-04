@@ -1,22 +1,15 @@
 package com.dexmp.dexmp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.VideoView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -46,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         // Back Save
         SharedPreferences save_load = getSharedPreferences("Saver", MODE_PRIVATE);
         coins = save_load.getInt("coins", 0);
-        balance.setText(save_load.getInt("coins", 0) + " P");
+        balance.setText(save_load.getInt("coins", 0) + " Oids");
         xp = save_load.getInt("xp", 0);
         lvl = save_load.getInt("lvl", 0);
 
         // Output
-        balance.setText(coins + " Р");
+        balance.setText(coins + " Oids");
         ui_lvl.setText("Уровень: " + lvl);
         progress_xp.setMax(Consts.X_XP * lvl);
         progress_xp.setProgress(xp);
@@ -74,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 //Edit vars
                 coins++;
                 xp++;
-                balance.setText(coins + " Р");
+                balance.setText(coins + " Oids");
                 ui_lvl.setText("Уровень: " + lvl);
                 progress_xp.setMax(Consts.X_XP * lvl);
                 progress_xp.setProgress(xp);
@@ -93,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     coins = coins * 2;
                     xp = 0;
 
-                    balance.setText(coins + " Р");
+                    balance.setText(coins + " Oids");
                     ui_lvl.setText("Уровень: " + lvl);
                     progress_xp.setMax(Consts.X_XP * lvl);
                     progress_xp.setProgress(xp);

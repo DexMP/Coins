@@ -38,8 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:max="100"
-        android:progress="20" />
+        android:max="100" />
 
     <TextView
         android:id="@+id/ui_lvl"
@@ -66,7 +65,8 @@
         android:id="@+id/coin"
         android:layout_width="225dp"
         android:layout_height="225dp"
-        android:src="@drawable/coin"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/oid"
         android:layout_gravity="bottom|center"
         android:background="@color/invisible" />
 

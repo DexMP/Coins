@@ -1,13 +1,11 @@
 package com.dexmp.dexmp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -23,7 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         initData();
 
         YoYo.with(Techniques.FadeIn)
-                .duration(2500)
+                .duration(Consts.SPLASH_SCREEN_ANIMATION)
                 .repeat(0)
                 .playOn(logo);
 
