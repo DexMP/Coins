@@ -5,14 +5,14 @@
     android:id="@+id/frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_img"
+    android:background="@color/background"
     tools:context=".SplashScreen">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="75dp"
+        android:layout_margin="50dp"
         android:layout_gravity="top"
         android:src="@drawable/oid"/>
 

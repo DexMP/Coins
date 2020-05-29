@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Oids</string>
-
     <!-- Game Strings -->
-    <string name="ram">Оперативная память</string>
+    <string name="finger">Палец</string>
+    <string name="brain">Мозги</string>
     <string name="accs">Аккаунты</string>
 </resources>

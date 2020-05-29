@@ -20,13 +20,23 @@ public class MainActivity extends AppCompatActivity {
     protected int coins;
     protected int xp;
     protected int lvl;
+    protected int price_finger;
+    protected int sum_finger;
+    protected int price_brain;
+    protected int sum_brain;
+    protected int dps;
+    protected int damage;
 
     // UI
-    public ImageView coin;
-    public TextView balance;
+    // Images
     public ImageView shop;
+    public ImageView coin;
+    public ImageView profile;
+    // Text
+    public TextView balance;
     public TextView ui_xp;
     public TextView ui_lvl;
+    // Components
     public FrameLayout back_root;
     public ProgressBar progress_xp;
 
@@ -38,13 +48,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Back Save
         SharedPreferences save_load = getSharedPreferences("Saver", MODE_PRIVATE);
+        //default
         coins = save_load.getInt("coins", 0);
-        balance.setText(save_load.getInt("coins", 0) + " Oids");
+        balance.setText(save_load.getInt("coins", 0) + Consts.GAME_VALUT);
         xp = save_load.getInt("xp", 0);
         lvl = save_load.getInt("lvl", 0);
+        //finger
+        price_finger = save_load.getInt("price_finger", Consts.START_PRICE_RAM);
+        sum_finger = save_load.getInt("sum_finger", 0);
+        //brain
+        price_brain = save_load.getInt("price_brain", Consts.START_PRICE_BRAIN);
+        sum_brain = save_load.getInt("sum_brain", 0);
+        //full damage
+        dps = save_load.getInt("dps", 0);
+        damage = save_load.getInt("damage", Consts.START_DAMAGE);
 
         // Output
-        balance.setText(coins + " Oids");
+        balance.setText(coins + Consts.GAME_VALUT);
         ui_lvl.setText("Уровень: " + lvl);
         progress_xp.setMax(Consts.X_XP * lvl);
         progress_xp.setProgress(xp);
@@ -65,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
                         .playOn(coin);
 
                 //Edit vars
-                coins++;
-                xp++;
-                balance.setText(coins + " Oids");
+                coins = coins + damage;
+                xp = xp + damage;
+                balance.setText(coins + Consts.GAME_VALUT);
                 ui_lvl.setText("Уровень: " + lvl);
                 progress_xp.setMax(Consts.X_XP * lvl);
                 progress_xp.setProgress(xp);
@@ -78,15 +98,21 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("coins", coins);
                 editor.putInt("xp", xp);
                 editor.putInt("lvl", lvl);
+                editor.putInt("sum_finger", sum_finger);
+                editor.putInt("price_finger", price_finger);
+                editor.putInt("sum_brain", sum_brain);
+                editor.putInt("price_brain", price_brain);
+                editor.putInt("dps", dps);
+                editor.putInt("damage", damage);
                 editor.apply();
 
                 if (xp > Consts.X_XP * lvl){
                     // Edit vars
                     lvl++;
-                    coins = coins * 2;
+                    coins = coins + 1000;
                     xp = 0;
 
-                    balance.setText(coins + " Oids");
+                    balance.setText(coins + Consts.GAME_VALUT);
                     ui_lvl.setText("Уровень: " + lvl);
                     progress_xp.setMax(Consts.X_XP * lvl);
                     progress_xp.setProgress(xp);
@@ -97,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
                     editor1.putInt("coins", coins);
                     editor1.putInt("xp", xp);
                     editor1.putInt("lvl", lvl);
+                    editor1.putInt("sum_finger", sum_finger);
+                    editor1.putInt("price_finger", price_finger);
+                    editor1.putInt("sum_brain", sum_brain);
+                    editor1.putInt("price_brain", price_brain);
+                    editor1.putInt("dps", dps);
+                    editor1.putInt("damage", damage);
                     editor1.apply();
                 }
             }
@@ -107,6 +139,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Shop.class));
+            }
+        });
+
+        // Profile
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Profile.class));
             }
         });
     }
@@ -136,5 +176,6 @@ public class MainActivity extends AppCompatActivity {
         back_root = (FrameLayout) findViewById(R.id.back_root);
         shop = (ImageView) findViewById(R.id.shop);
         progress_xp = (ProgressBar) findViewById(R.id.progress_xp);
+        profile = (ImageView) findViewById(R.id.profile);
     }
 }
