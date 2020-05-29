@@ -114,11 +114,9 @@ public class Shop extends AppCompatActivity implements View.OnClickListener {
                         SharedPreferences savedProgress = getSharedPreferences("Saver", MODE_PRIVATE);
                         SharedPreferences.Editor editor = savedProgress.edit();
                         editor.putInt("coins", coins);
-                        editor.putInt("xp", xp);
                         editor.putInt("lvl", lvl);
                         editor.putInt("sum_finger", sum_finger);
                         editor.putInt("price_finger", price_finger);
-                        editor.putInt("dps", dps);
                         editor.putInt("damage", damage);
                         editor.apply();
 
@@ -129,6 +127,7 @@ public class Shop extends AppCompatActivity implements View.OnClickListener {
                 } else {
                     Toast.makeText(this, "Эмм.. не хватает денег", Toast.LENGTH_LONG).show();
                 }
+                break;
             case R.id.brain:
                 if (coins >= price_brain) {
                     if (lvl >= 10) {
@@ -140,11 +139,9 @@ public class Shop extends AppCompatActivity implements View.OnClickListener {
                         SharedPreferences savedProgress = getSharedPreferences("Saver", MODE_PRIVATE);
                         SharedPreferences.Editor editor = savedProgress.edit();
                         editor.putInt("coins", coins);
-                        editor.putInt("xp", xp);
                         editor.putInt("lvl", lvl);
-                        editor.putInt("sum_finger", sum_finger);
-                        editor.putInt("price_finger", price_finger);
-                        editor.putInt("dps", dps);
+                        editor.putInt("sum_brain", sum_brain);
+                        editor.putInt("price_brain", price_brain);
                         editor.putInt("damage", damage);
                         editor.apply();
 

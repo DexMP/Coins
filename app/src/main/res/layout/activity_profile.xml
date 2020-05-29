@@ -83,4 +83,29 @@
 
     </ScrollView>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <EditText
+            android:id="@+id/str_for_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="75dp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/send_code"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_send_24dp"
+            android:background="@color/invisible"
+            android:padding="18dp"/>
+
+    </FrameLayout>
+
 </FrameLayout>

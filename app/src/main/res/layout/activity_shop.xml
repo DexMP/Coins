@@ -16,8 +16,8 @@
         android:paddingTop="2dp"
         android:textColor="@color/white"
         android:text=""
-        android:layout_gravity="top"
-        android:gravity="left"/>
+        android:layout_gravity="top|right"
+        android:gravity="right"/>
 
     <ScrollView
         android:layout_marginTop="50dp"
