@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected int sum_finger;
     protected int price_brain;
     protected int sum_brain;
+    protected int price_mining_machine;
+    protected int sum_mining_machine;
     protected int dps;
     protected int damage;
 
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         //brain
         price_brain = save_load.getInt("price_brain", Consts.START_PRICE_BRAIN);
         sum_brain = save_load.getInt("sum_brain", 0);
+        //mining machine
+        price_mining_machine = save_load.getInt("price_mining_machine", Consts.START_PRICE_MINING_MACHINE);
+        sum_mining_machine = save_load.getInt("sum_mining_machine", 0);
         //full damage
         dps = save_load.getInt("dps", 0);
         damage = save_load.getInt("damage", Consts.START_DAMAGE);
@@ -98,12 +103,6 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("coins", coins);
                 editor.putInt("xp", xp);
                 editor.putInt("lvl", lvl);
-                editor.putInt("sum_finger", sum_finger);
-                editor.putInt("price_finger", price_finger);
-                editor.putInt("sum_brain", sum_brain);
-                editor.putInt("price_brain", price_brain);
-                editor.putInt("dps", dps);
-                editor.putInt("damage", damage);
                 editor.apply();
 
                 if (xp > Consts.X_XP * lvl){
@@ -123,12 +122,6 @@ public class MainActivity extends AppCompatActivity {
                     editor1.putInt("coins", coins);
                     editor1.putInt("xp", xp);
                     editor1.putInt("lvl", lvl);
-                    editor1.putInt("sum_finger", sum_finger);
-                    editor1.putInt("price_finger", price_finger);
-                    editor1.putInt("sum_brain", sum_brain);
-                    editor1.putInt("price_brain", price_brain);
-                    editor1.putInt("dps", dps);
-                    editor1.putInt("damage", damage);
                     editor1.apply();
                 }
             }

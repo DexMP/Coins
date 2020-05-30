@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,14 +20,21 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     protected int sum_finger;
     protected int price_brain;
     protected int sum_brain;
+    protected int price_mining_machine;
+    protected int sum_mining_machine;
     protected int dps;
     protected int damage;
 
     // UI
+    //Text
     TextView username;
     TextView usersurname;
     TextView bag;
+    TextView boosts;
+    TextView stats;
+    //Input
     EditText code;
+    //Images
     ImageView send;
     ImageView avatar;
 
@@ -51,6 +57,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         //brain
         price_brain = save_load.getInt("price_brain", Consts.START_PRICE_BRAIN);
         sum_brain = save_load.getInt("sum_brain", 0);
+        //mining machine
+        price_mining_machine = save_load.getInt("price_mining_machine", Consts.START_PRICE_MINING_MACHINE);
+        sum_mining_machine = save_load.getInt("sum_mining_machine", 0);
         //full damage
         dps = save_load.getInt("dps", 0);
         damage = save_load.getInt("damage", Consts.START_DAMAGE);
@@ -58,15 +67,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         updateBag();
 
         send.setOnClickListener(this);
-    }
-
-    private void initData() {
-        username = (TextView) findViewById(R.id.name);
-        usersurname = (TextView) findViewById(R.id.surname);
-        avatar = (ImageView) findViewById(R.id.avatar);
-        bag = (TextView) findViewById(R.id.all_stats);
-        code = (EditText) findViewById(R.id.str_for_code);
-        send = (ImageView) findViewById(R.id.send_code);
     }
 
     private void updateBag() {
@@ -82,15 +82,21 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         //brain
         price_brain = save_load.getInt("price_brain", Consts.START_PRICE_BRAIN);
         sum_brain = save_load.getInt("sum_brain", 0);
+        //mining machine
+        price_mining_machine = save_load.getInt("price_mining_machine", Consts.START_PRICE_MINING_MACHINE);
+        sum_mining_machine = save_load.getInt("sum_mining_machine", 0);
         //full damage
         dps = save_load.getInt("dps", 0);
         damage = save_load.getInt("damage", Consts.START_DAMAGE);
 
         bag.setText(coins + Consts.GAME_VALUT + "\n" +
-                xp + " Опыта" + "\n" + lvl + " Уровень" + "\n" +
-                sum_finger + " Пальцев куплено" + "\n" +
+                xp + " Опыта" + "\n" + lvl + " Уровень" + "\n");
+
+        boosts.setText(sum_finger + " Клик+ куплено" + "\n" +
                 sum_brain + " Мозгов куплено" + "\n" +
-                dps + " Урона в секунду" + "\n" +
+                sum_mining_machine + " Майнинг машин куплено");
+
+        stats.setText(dps + " Урона в секунду" + "\n" +
                 damage + " Урона за клик" + "\n");
     }
 
@@ -122,11 +128,21 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                     editor.apply();
                     updateBag();
                     code.setText("");
-                }
-                else {
+                } else {
                     code.setText("");
                     Toast.makeText(this, "Плохая попытка!", Toast.LENGTH_SHORT).show();
                 }
         }
+    }
+
+    private void initData() {
+        username = (TextView) findViewById(R.id.name);
+        usersurname = (TextView) findViewById(R.id.surname);
+        avatar = (ImageView) findViewById(R.id.avatar);
+        bag = (TextView) findViewById(R.id.bag);
+        boosts = (TextView) findViewById(R.id.boosts);
+        stats = (TextView) findViewById(R.id.stats);
+        code = (EditText) findViewById(R.id.str_for_code);
+        send = (ImageView) findViewById(R.id.send_code);
     }
 }

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Oids</string>
     <!-- Game Strings -->
-    <string name="finger">Палец</string>
+    <string name="finger">Клик+</string>
     <string name="brain">Мозги</string>
+    <string name="mining_machine">Майнинг машина</string>
     <string name="accs">Аккаунты</string>
 </resources>

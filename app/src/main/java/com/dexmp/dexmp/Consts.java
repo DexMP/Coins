@@ -13,6 +13,7 @@ public final class Consts {
     public static final int X_XP = 1000;
     public static final int START_PRICE_RAM = 1000;
     public static final int START_PRICE_BRAIN = 10000;
+    public static final int START_PRICE_MINING_MACHINE = 50000;
     public static final int START_DAMAGE = 1;
     public static final int TIC = 1;
 }
