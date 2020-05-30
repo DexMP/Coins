@@ -1,5 +1,7 @@
 package com.dexmp.dexmp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -105,13 +107,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lvl++;
             coins = coins + 1000;
             xp = 0;
-
             balance.setText(coins + Consts.GAME_VALUT);
             ui_lvl.setText("Уровень: " + lvl);
             progress_xp.setMax(Consts.X_XP * lvl * 5);
             progress_xp.setProgress(xp);
-
             saveProgress();
+            message();
         }
     }
 
@@ -181,6 +182,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         coin.setOnClickListener(this);
         shop.setOnClickListener(this);
         profile.setOnClickListener(this);
+    }
+
+    private void message() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Вознаграждение")
+                .setMessage("Вы повысили уровень и получаетте за это награду")
+                .setCancelable(true)
+                .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    public void onCancel(DialogInterface dialog) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("Хорошо)",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private void startTimer() {
