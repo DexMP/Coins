@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.dexmp.dexmp.data.Consts;
 
 public class SplashScreen extends AppCompatActivity {
 

@@ -34,9 +34,70 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/news"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                app:cardBackgroundColor="@color/silver"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:src="@drawable/oid"
+                        android:background="@color/invisible"/>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="2dp"
+                            android:text="@string/news"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/news_sum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:paddingLeft="8dp"
+                            android:layout_marginTop="38dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/news_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="right"
+                            android:paddingRight="15dp"
+                            android:textSize="16sp" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/finger"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
                 app:cardBackgroundColor="@color/silver"
@@ -75,7 +136,6 @@
                             android:gravity="left"
                             android:paddingLeft="8dp"
                             android:layout_marginTop="38dp"
-                            android:text="Колличество:"
                             android:textSize="15dp"
                             android:textColor="@color/black"/>
 
@@ -83,11 +143,10 @@
                             android:id="@+id/finger_price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingRight="15dp"
-                            android:text=""
-                            android:textSize="16sp"
+                            android:layout_gravity="bottom"
                             android:gravity="right"
-                            android:layout_gravity="bottom"/>
+                            android:paddingRight="15dp"
+                            android:textSize="16sp" />
 
                     </FrameLayout>
 
@@ -102,7 +161,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
-                android:backgroundTint="@color/silver"
+                app:cardBackgroundColor="@color/silver"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -138,7 +197,6 @@
                             android:gravity="left"
                             android:paddingLeft="8dp"
                             android:layout_marginTop="38dp"
-                            android:text="Колличество:"
                             android:textSize="15dp"
                             android:textColor="@color/black"/>
 
@@ -147,7 +205,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingRight="15dp"
-                            android:text=""
                             android:textSize="16sp"
                             android:gravity="right"
                             android:layout_gravity="bottom"/>
@@ -165,7 +222,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
-                android:backgroundTint="@color/silver"
+                app:cardBackgroundColor="@color/silver"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -202,7 +259,6 @@
                             android:gravity="left"
                             android:paddingLeft="8dp"
                             android:layout_marginTop="38dp"
-                            android:text=""
                             android:textSize="15dp"
                             android:textColor="@color/black"/>
 
@@ -211,7 +267,69 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingRight="15dp"
-                            android:text=""
+                            android:textSize="16sp"
+                            android:gravity="right"
+                            android:layout_gravity="bottom"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mining_farm"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/silver"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:src="@drawable/oid"
+                        android:background="@color/invisible"/>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/invisible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="2dp"
+                            android:text="@string/mining_farm"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/mining_farm_sum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:paddingLeft="8dp"
+                            android:layout_marginTop="38dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/mining_farm_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="15dp"
                             android:textSize="16sp"
                             android:gravity="right"
                             android:layout_gravity="bottom"/>

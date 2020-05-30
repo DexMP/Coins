@@ -4,5 +4,7 @@
     <string name="finger">Клик+</string>
     <string name="brain">Мозги</string>
     <string name="mining_machine">Майнинг машина</string>
+    <string name="mining_farm">Майнинг ферма</string>
+    <string name="news">Вложение новичка</string>
     <string name="accs">Аккаунты</string>
 </resources>
