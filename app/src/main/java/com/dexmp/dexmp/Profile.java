@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.dexmp.dexmp.data.Consts;
 
-public class Profile extends AppCompatActivity implements View.OnClickListener {
+public class Profile extends AppCompatActivity{
 
     // Vars
     protected int coins;
@@ -38,10 +38,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     TextView bag;
     TextView boosts;
     TextView stats;
-    //Input
-    EditText code;
     //Images
-    ImageView send;
     ImageView avatar;
 
     @Override
@@ -52,14 +49,10 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         initData();
         loadProgress();
         updateBag();
-        clicks();
     }
 
     /*================================ Voids ================================*/
 
-    private void clicks() {
-        send.setOnClickListener(this);
-    }
 
     private void loadProgress() {
         // Back Save
@@ -123,32 +116,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         editor.apply();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.send_code:
-                if (code.getText().toString().contains("getadmin3000")) {
-                    coins = coins + 3000;
-                    saveProgress();
-                    updateBag();
-                    code.setText("");
-                } else if (code.getText().toString().contains("getdex10000")) {
-                    coins = coins + 10000;
-                    saveProgress();
-                    updateBag();
-                    code.setText("");
-                } else if (code.getText().toString().contains("superadmin")) {
-                    coins = coins + 100000;
-                    saveProgress();
-                    updateBag();
-                    code.setText("");
-                } else {
-                    code.setText("");
-                    Toast.makeText(this, "Плохая попытка!", Toast.LENGTH_SHORT).show();
-                }
-        }
-    }
-
     private void initData() {
         username = (TextView) findViewById(R.id.name);
         usersurname = (TextView) findViewById(R.id.surname);
@@ -156,7 +123,5 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         bag = (TextView) findViewById(R.id.bag);
         boosts = (TextView) findViewById(R.id.boosts);
         stats = (TextView) findViewById(R.id.stats);
-        code = (EditText) findViewById(R.id.str_for_code);
-        send = (ImageView) findViewById(R.id.send_code);
     }
 }
