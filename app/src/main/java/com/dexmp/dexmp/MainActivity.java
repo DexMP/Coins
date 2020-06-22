@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected int sum_news;
     protected int price_finger;
     protected int sum_finger;
-    protected int price_brain;
-    protected int sum_brain;
+    protected int price_script;
+    protected int sum_script;
     protected int price_mining_machine;
     protected int sum_mining_machine;
     protected int price_mining_farm;
@@ -140,8 +140,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.putInt("sum_news", sum_news);
         editor.putInt("sum_finger", sum_finger);
         editor.putInt("price_finger", price_finger);
-        editor.putInt("sum_brain", sum_brain);
-        editor.putInt("price_brain", price_brain);
+        editor.putInt("sum_script", sum_script);
+        editor.putInt("price_script", price_script);
         editor.putInt("sum_mining_machine", sum_mining_machine);
         editor.putInt("price_mining_machine", price_mining_machine);
         editor.putInt("price_mining_farm", price_mining_farm);
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         price_finger = save_load.getInt("price_finger", Consts.START_PRICE_FINGER);
         sum_finger = save_load.getInt("sum_finger", 0);
         //brain
-        price_brain = save_load.getInt("price_brain", Consts.START_PRICE_BRAIN);
-        sum_brain = save_load.getInt("sum_brain", 0);
+        price_script = save_load.getInt("price_script", Consts.START_PRICE_BRAIN);
+        sum_script = save_load.getInt("sum_script", 0);
         //mining machine
         price_mining_machine = save_load.getInt("price_mining_machine", Consts.START_PRICE_MINING_MACHINE);
         sum_mining_machine = save_load.getInt("sum_mining_machine", 0);
